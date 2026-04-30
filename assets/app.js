@@ -54,4 +54,29 @@ async function loadBrooklynWeather() {
   }
 }
 
+function spawnWeatherDrops(widget, emoji) {
+  const dropCount = 14;
+  for (let i = 0; i < dropCount; i += 1) {
+    const drop = document.createElement('span');
+    drop.className = 'weather-drop';
+    drop.textContent = emoji;
+    const size = 16 + Math.round(Math.random() * 16);
+    const offset = Math.random() * 100;
+    const delay = Math.random() * 0.4;
+    drop.style.left = `${offset}%`;
+    drop.style.fontSize = `${size}px`;
+    drop.style.animationDelay = `${delay}s`;
+    widget.appendChild(drop);
+    window.setTimeout(() => {
+      if (drop.parentElement) drop.parentElement.removeChild(drop);
+    }, 3200);
+  }
+}
+
+const weatherWidget = document.querySelector('.weather-widget');
+weatherWidget.addEventListener('mouseenter', () => {
+  const emoji = weatherEmoji.textContent.trim() || '☀️';
+  spawnWeatherDrops(weatherWidget, emoji);
+});
+
 loadBrooklynWeather();

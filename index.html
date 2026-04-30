@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amanda - UX Designer</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -20,11 +20,25 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Amanda</h1>
-      <p class="subtitle">UX Designer</p>
-      <p>Creating intuitive, beautiful digital experiences that solve real problems and delight users.</p>
-      <a href="#portfolio" class="cta-button">View My Work</a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>Amanda</h1>
+        <p class="subtitle">UX Designer</p>
+        <p>Creating intuitive, beautiful digital experiences that solve real problems and delight users.</p>
+        <a href="#portfolio" class="cta-button">View My Work</a>
+      </div>
+
+      <aside class="weather-card">
+        <div class="weather-card-inner">
+          <p class="weather-intro">I'm currently in Brooklyn, NY where it's</p>
+          <div class="weather-widget">
+            <span id="weather-emoji" class="weather-emoji">⛅</span>
+            <div class="weather-text-wrap">
+              <p id="weather-text">Brooklyn, NY — loading the current vibe from 11215...</p>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -227,5 +241,7 @@
   <footer>
     <p>&copy; 2026 Amanda. All rights reserved.</p>
   </footer>
+
+  <script src="assets/app.js"></script>
 </body>
 </html>
